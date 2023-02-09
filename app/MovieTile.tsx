@@ -20,8 +20,8 @@ export default function MovieTile(props: MovieTileProps)
     return (
         <Link href={"/id/" + props.id}>
             <div className="flex flex-col justify-start bg-secondary-900" >
-                <Image src={imageBaseUrl + props.poster} alt={props.title + " poster"} width={1000} height={1000} />
-                <div className="flex justify-between pt-2 items-center opacity-80">
+                <Image src={imageBaseUrl + props.poster} alt={props.title + " poster"} width={1000} height={1000} className="rounded"/>
+                <div className="flex justify-between pt-2 items-center opacity-80 ">
                     <p className="text-xs">{props.release}</p>
                     <div className="flex">
                         <IconStar />

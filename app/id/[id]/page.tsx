@@ -27,7 +27,7 @@ export default async function MovieDetail({ params })
 
                     <div className="w-2/3 ml-8">
                         <h1 className="text-3xl">{res.title}</h1>
-                        <p>{res.genres.map((genre, index) => genre.name + (index == res.genres.length-1 ? "" : ", "))}</p>
+                        <p>{res.genres.map((genre, index) => genre.name + (index == res.genres.length - 1 ? "" : ", "))}</p>
                         <p className="text-md">{res.release_date}</p>
                         <p className="text-md">{res.runtime} Minutes</p>
                         <p>Score {res.vote_average}</p>
@@ -36,12 +36,14 @@ export default async function MovieDetail({ params })
                         <h2 className="py-2">Overview</h2>
                         <p className="text-md">{res.overview}</p>
 
+                        <p className="text-secondary-600 mt-10">{JSON.stringify(res)}</p>
                     </div>
                 </div>
-
-                <div className="z-0">
-                    <Image className="w-full absolute left-0 top-0 opacity-20 z-0" alt={res.title} width={2000} height={2000} src={imageBaseUrl + res.backdrop_path}></Image>
-                </div>
+                { res.backdrop_path &&
+                    <div className="z-0">
+                        <Image className="w-full absolute left-0 top-0 opacity-20 z-0" alt={res.title} width={2000} height={2000} src={imageBaseUrl + res.backdrop_path}></Image>
+                    </div>
+                }
             </div>
         </div>
     )

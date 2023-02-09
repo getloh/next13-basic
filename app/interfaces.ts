@@ -1,3 +1,11 @@
+export interface MovieDBResponse{
+    dates?: {maximum: string, minimum: string},
+    page: number,
+    results: MovieResult[],
+    total_pages: number,
+    total_results: number
+}
+
 export interface MovieResult
 {
     adult: boolean,
